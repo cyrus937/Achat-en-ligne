@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/Article.js"></script>
+    <script type="text/javascript" src="js/Panier.js">
+        function Ajouter() {
+
+            let idArticle = document.getElementById("identifiant").value
+            let qte = parseInt(document.getElementById("qte").value)
+
+            console.log(idArticle + " " + qte)
+        }
+
+        function Afficher(){
+            let elt = document.getElementById('contenu');
+            elt.innerHTML = ""
+            for(let article of this.articles){
+                elt.innerHTML += "<td>"+
+                "<div class=\"card\">"+
+                    "<div class=\"img\">"+
+                        "<img src=\""+article.image+"\" alt=\""+article.nom+"\">"+
+                    "</div>"+
+                    "<div class=\"text\">"+
+                        "<div>"+
+                            "<button type=\"button\" class=\"btn btn-danger\">Danger</button>"+
+                        "</div>"+
+                    "</div>"+
+                "</div>"+
+            "</td>";
+            }
+        }
+    </script>
+
+    <title>Achat en ligne</title>
+
+</head>
+
+<body>
+    <header style="background-color: rgb(236, 176, 133); height:60px">
+        <h2>Achat en ligne</h2>
+    </header>
+    <h1>Article mis en vente</h1>
+    <div class="container">
+        <table>
+            <tr >
+                <td>
+                    <div  class="card">
+                        <div class="img">
+                            <img src="images/téléchargement.jpeg" alt="ordi">
+                        </div>
+                        <div class="text">
+                            <div>
+                                <label for="text">Nom :</label>
+                                <label for="text">Ordinateur</label>
+                            </div>
+                            <div>
+                                <label for="text">Identifiant :</label>
+                                <label for="text">qkkdjj555555</label>
+                            </div>
+                            <div>
+                                <label for="text">Prix :</label>
+                                <label for="text">21.000 XAF</label>
+                            </div>
+                            <div>
+                                <label for="text">Quantité en stock :</label>
+                                <label for="text">10</label>
+                            </div>
+                            <div>
+                                <a href="#description.html">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="img">
+                            <img src="images/images.jpeg" alt="ordi">
+                        </div>
+                        <div class="text">
+                            <div>
+                                <label for="text">Nom :</label>
+                                <label for="text">Telephone</label>
+                            </div>
+                            <div>
+                                <label for="text">Identifiant :</label>
+                                <label for="text">89655r2t5523</label>
+                            </div>
+                            <div>
+                                <label for="text">Prix :</label>
+                                <label for="text">109.900 XAF</label>
+                            </div>
+                            <div>
+                                <label for="text">Quantité en stock :</label>
+                                <label for="text">52</label>
+                            </div>
+                            <div>
+                                <a href="#description.html">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="img">
+                            <img src="images/images (1).jpeg" alt="ordi">
+                        </div>
+                        <div class="text">
+                            <div>
+                                <label for="text">Nom :</label>
+                                <label for="text">Frigérateur</label>
+                            </div>
+                            <div>
+                                <label for="text">Identifiant :</label>
+                                <label for="text">58982dd6302s</label>
+                            </div>
+                            <div>
+                                <label for="text">Prix :</label>
+                                <label for="text">226.990 XAF</label>
+                            </div>
+                            <div>
+                                <label for="text">Quantité en stock :</label>
+                                <label for="text">8</label>
+                            </div>
+                            <div>
+                                <a href="description.html">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h1>Ajout au panier</h1>
+    <div class="formulaire">
+        <form action="Ajouter">
+            <div class="row">
+              <div class="col">
+                <input id="identifiant" type="text" class="form-control" placeholder="Identifiant">
+              </div>
+              <div class="col">
+                <input id="qte" type="number" class="form-control number" placeholder="Quantité">
+              </div>
+            </div>
+            <button type="button" onclick="Ajouter" class="btn btn-success">Ajouter</button>
+          </form>
+    </div>
+
+    <h1>Contenu du panier</h1>
+    <table>
+        <tr id="contenu">
+            <td>
+                <div class="card">
+                    <div class="img">
+                        <img src="images/images.jpeg" alt="ordi">
+                    </div>
+                    <div class="text">
+                        <div>
+                            <button type="button" class="btn btn-danger">Danger</button>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <script type="text/javascript">
+                Afficher();
+             </script>
+        </tr>
+    </table>
+</body>
+
+</html>
